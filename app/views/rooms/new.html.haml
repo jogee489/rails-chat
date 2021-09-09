@@ -1,0 +1,12 @@
+%h2.text-center
+  Create Chat Room
+  %br
+  %small
+    = link_to 'Back', rooms_path, class: 'btn btn-primary btn-sx'
+    
+= form_for @room do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, autofocus: true, class: 'form-control'
+
+  = f.submit "Save", class: 'btn btn-primary'

@@ -1,0 +1,24 @@
+%h2.text-center
+  Chat rooms
+  %br
+  %small
+    = link_to 'New chat room', new_room_path, class: 'btn btn-primary btn-sx'
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Owner
+      %th Created At
+      %th
+  %tbody
+    - @rooms.each do |chat_room|
+      %tr
+        %td
+          = chat_room.name
+        %td
+          = chat_room.user.username
+        %td
+          = chat_room.created_at
+        %td
+          = link_to "Enter", room_path(chat_room), class: "btn btn-sm btn-primary"

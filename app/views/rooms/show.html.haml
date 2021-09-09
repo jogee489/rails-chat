@@ -1,0 +1,7 @@
+%h2.text-center
+  = @room.name
+  %br
+  %small
+    = link_to 'Back', rooms_path, class: 'btn btn-primary btn-sx'
+
+= react_component('Room', { room: @json_object })
